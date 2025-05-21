@@ -23,7 +23,7 @@ describe('add command', () => {
 
   afterEach(async () => {
     // Clean up temp repo folder after each test
-    //await fs.rm(repoDir, { recursive: true, force: true });
+    await fs.rm(repoDir, { recursive: true, force: true });
   });
 
   test('adds a single file by relative path', async () => {
