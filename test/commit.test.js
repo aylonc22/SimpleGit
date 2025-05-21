@@ -2,11 +2,13 @@ const fs = require('fs/promises');
 const path = require('path');
 const { commit } = require('../lib/commit');
 const { initRepo } = require('../lib/init');
+const { setAuthor } = require('../lib/config');
 
 const repoDir = path.join(__dirname, 'test-repo');
 
 beforeEach(async () => {
   await initRepo(repoDir);
+  await setAuthor("test<test@gmail.com>", repoDir);
   await fs.writeFile(path.join(repoDir, '.simplegit', 'index'), 'fakehash file.txt\n');
 });
 
