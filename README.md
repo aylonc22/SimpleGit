@@ -16,7 +16,7 @@ This project is **purely educational** and is not intended to replace Git. It’
 ## 🔧 Features (Planned)
 
 - [x] `simplegit init` - Initialize a new repository
-- [ ] `simplegit add <file>` - Stage files
+- [x] `simplegit add <file>` - Stage files
 - [ ] `simplegit commit -m "message"` - Commit staged changes
 - [ ] `simplegit log` - View commit history
 - [ ] `simplegit status` - Show current changes
