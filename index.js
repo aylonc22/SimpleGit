@@ -4,13 +4,19 @@ const { help } = require('./lib/help');
 
 const [,, command, target] = process.argv;
 
-if (command === 'init') {
-  initRepo();
-} else if (command === 'add') {
-  add(target);
-} else if (command === 'help' || !command) {
-  help();
-} else {
-  console.log(`Unknown command: ${command}`);
-  help();
+switch (command) {
+  case 'init':
+    initRepo();
+    break;
+  case 'add':
+    add(target);
+    break;
+  case 'help':
+  case undefined:
+    help();
+    break;
+  default:
+    console.log(`Unknown command: ${command}`);
+    help();
+    break;
 }
