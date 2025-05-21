@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "bin": {
-    "simplegit": "./index.js"
+    "simplegit": "./bin/index.js"
   },
   "keywords": [],
   "author": "",

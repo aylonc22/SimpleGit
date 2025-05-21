@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const { initRepo } = require('./lib/init');
 
 const [,, command] = process.argv;
