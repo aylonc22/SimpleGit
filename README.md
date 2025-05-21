@@ -47,6 +47,6 @@ This project is **purely educational** and is not intended to replace Git. It’
   refs/
     heads/
       master     # commit pointer for master
-
+```
 
 If you want to truly understand a tool, rebuild it from scratch
