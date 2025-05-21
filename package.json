@@ -1,0 +1,21 @@
+{
+  "name": "simplegit",
+  "version": "1.0.0",
+  "description": "A minimal Git clone built from scratch in Node.js — designed to help developers learn how Git works under the hood.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "simplegit": "./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
