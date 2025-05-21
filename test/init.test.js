@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const path = require('path');
 const { initRepo } = require('../lib/init');
 
-const TEST_REPO = path.join(__dirname, 'test-repo');
+const TEST_REPO = path.join(__dirname, 'test-repo-init');
 
 beforeEach(async () => {
   await fs.rm(TEST_REPO, { recursive: true, force: true });

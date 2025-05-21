@@ -16,6 +16,7 @@
     "commander": "^14.0.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "memfs": "^4.17.2"
   }
 }
