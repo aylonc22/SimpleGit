@@ -4,7 +4,7 @@ const { commit } = require('../lib/commit');
 const { initRepo } = require('../lib/init');
 const { setAuthor } = require('../lib/config');
 
-const repoDir = path.join(__dirname, 'test-repo');
+const repoDir = path.join(__dirname, 'test-repo-commit');
 
 beforeEach(async () => {
   await initRepo(repoDir);

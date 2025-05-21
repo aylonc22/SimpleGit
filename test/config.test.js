@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const path = require('path');
 const { setAuthor, getAuthor } = require('../lib/config');
 
-const repoDir = path.join(__dirname, 'test-repo');
+const repoDir = path.join(__dirname, 'test-repo-config');
 
 beforeEach(async () => {
   // Clean up and recreate test repo folder
