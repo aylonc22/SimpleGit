@@ -4,6 +4,7 @@ const { help } = require('./lib/help');
 const { commit } = require('./lib/commit');
 const { log } = require('./lib/log');
 const { setAuthor } = require('./lib/config');
+const { status } = require('./lib/status');
 
 const [,, command, ...args] = process.argv;
 
@@ -13,6 +14,9 @@ switch (command) {
     break;
   case 'add':
     add(args[0]);
+    break;
+  case 'status':
+    status();
     break;
   case 'commit':
     if(args[0] === '-m' && args[1]){

@@ -17,9 +17,9 @@ This project is **purely educational** and is not intended to replace Git. It’
 
 - [x] `simplegit init` - Initialize a new repository
 - [x] `simplegit add <file>` - Stage files
-- [ ] `simplegit commit -m "message"` - Commit staged changes
-- [ ] `simplegit log` - View commit history
-- [ ] `simplegit status` - Show current changes
+- [x] `simplegit commit -m "message"` - Commit staged changes
+- [x] `simplegit log` - View commit history
+- [x] `simplegit status` - Show current changes
 - [ ] Branching & HEAD management
 - [ ] Basic merge support
 - [ ] Remote push/pull (experimental)
