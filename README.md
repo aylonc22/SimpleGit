@@ -21,8 +21,8 @@ This project is **purely educational** and is not intended to replace Git. It’
 - [x] `simplegit log` - View commit history
 - [x] `simplegit status` - Show current changes
 - [x] Branching & HEAD management
-- [ ] Basic merge support
-- [ ] Remote push/pull (experimental)
+- [x] Basic merge support
+- [ ] Remote push/pull (future experimental)
 
 ## 📦 Tech Stack
 
