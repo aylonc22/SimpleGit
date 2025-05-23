@@ -20,7 +20,7 @@ This project is **purely educational** and is not intended to replace Git. It’
 - [x] `simplegit commit -m "message"` - Commit staged changes
 - [x] `simplegit log` - View commit history
 - [x] `simplegit status` - Show current changes
-- [ ] Branching & HEAD management
+- [x] Branching & HEAD management
 - [ ] Basic merge support
 - [ ] Remote push/pull (experimental)
 

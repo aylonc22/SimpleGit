@@ -6,6 +6,7 @@ const { log } = require('./lib/log');
 const { setAuthor } = require('./lib/config');
 const { status } = require('./lib/status');
 const { removeFromIndex } = require('./lib/remove');
+const { createBranch, checkoutBranch, getCurrentBranch } = require('./lib/branch');
 
 const [,, command, ...args] = process.argv;
 
@@ -19,8 +20,24 @@ switch (command) {
   case 'status':
     status();
     break;
-  case 'reset':
-    if (command === 'reset') {
+  case 'current-branch':
+    getCurrentBranch().then(console.log);
+    break;
+  case 'branch':
+    if(args[0]){
+      createBranch(args[0]);
+    }else{
+      console.log(`Usage: simplegit branch <branch name>`)
+    }
+    break;
+  case 'checkout':
+    if(args[0]){
+      checkoutBranch(args[0]);
+    }else{
+       console.log(`Usage: simplegit checkout <branch name>`)
+    }
+      break;
+  case 'reset':   
       if (args.length === 0) {
          removeFromIndex(); // unstage all
          console.log('All files unstaged.');
@@ -28,8 +45,7 @@ switch (command) {
         for (const target of args) {
           removeFromIndex(target);
           console.log(`Unstaged: ${target}`);
-        }
-      }
+        }      
     }
     break;
   case 'commit':
