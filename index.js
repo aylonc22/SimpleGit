@@ -7,6 +7,7 @@ const { setAuthor } = require('./lib/config');
 const { status } = require('./lib/status');
 const { removeFromIndex } = require('./lib/remove');
 const { createBranch, checkoutBranch, getCurrentBranch } = require('./lib/branch');
+const { mergeBranches } = require('./lib/merge');
 
 const [,, command, ...args] = process.argv;
 
@@ -20,6 +21,13 @@ switch (command) {
   case 'status':
     status();
     break;
+  case 'merge':
+    if(args[0]){
+      mergeBranches(args[0]);
+    }else{
+      console.log(`Usage: simplegit merge <branch name>`);
+    }
+    break;
   case 'current-branch':
     getCurrentBranch().then(console.log);
     break;
@@ -27,7 +35,7 @@ switch (command) {
     if(args[0]){
       createBranch(args[0]);
     }else{
-      console.log(`Usage: simplegit branch <branch name>`)
+      console.log(`Usage: simplegit branch <branch name>`);
     }
     break;
   case 'checkout':

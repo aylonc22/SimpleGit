@@ -26,7 +26,7 @@ describe('branch commands', () => {
     await createBranch('feature', TEST_REPO);
 
     const headContent = await fs.readFile(path.join(TEST_REPO, '.simplegit', 'HEAD'), 'utf-8');
-    expect(headContent.trim()).toBe('ref: refs/heads/master');  // assuming master is default branch
+    expect(headContent.trim()).toBe('ref: refs/heads/master');
   });
 
   test('checkout switches HEAD to given branch', async () => {
@@ -44,4 +44,15 @@ describe('branch commands', () => {
     const branchName = await getCurrentBranch(TEST_REPO);
     expect(branchName).toBe('feature');
   });
+  
+  test('checkout fails gracefully for non-existent branch', async () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    await checkoutBranch('nonexistent', TEST_REPO);
+
+    expect(errorSpy).toHaveBeenCalledWith(expect.stringContaining("Branch 'nonexistent' does not exist."));
+
+    errorSpy.mockRestore();
+  });
+
 });
