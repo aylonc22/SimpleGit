@@ -28,7 +28,6 @@ This project is **purely educational** and is not intended to replace Git. It’
 
 - Node.js
 - Native `fs` and `crypto` modules
-- CLI framework: [commander](https://www.npmjs.com/package/commander) (or yargs)
 
 ## 🧠 Learnings
 
