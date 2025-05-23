@@ -6,16 +6,6 @@ const { setAuthor } = require('../lib/config');
 const { initRepo } = require('../lib/init');
 
 const TEST_REPO = path.join(__dirname, 'test-repo-add');
-async function setupTempRepo() {
-  // Initialize .simplegit structure (like initRepo does)
-  const gitDir = path.join(TEST_REPO, '.simplegit');
-  await fs.mkdir(path.join(gitDir, 'objects'), { recursive: true });
-  await fs.mkdir(path.join(gitDir, 'refs', 'heads'), { recursive: true });
-  await fs.writeFile(path.join(gitDir, 'HEAD'), 'refs/heads/master\n');
-  await fs.writeFile(path.join(gitDir, 'refs', 'heads', 'master'), '');
-  await fs.writeFile(path.join(gitDir, 'index'), '');
-  return TEST_REPO;
-}
 
 describe('add command', () => { 
 

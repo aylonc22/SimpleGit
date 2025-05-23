@@ -5,6 +5,7 @@ const { commit } = require('./lib/commit');
 const { log } = require('./lib/log');
 const { setAuthor } = require('./lib/config');
 const { status } = require('./lib/status');
+const { removeFromIndex } = require('./lib/remove');
 
 const [,, command, ...args] = process.argv;
 
@@ -17,6 +18,19 @@ switch (command) {
     break;
   case 'status':
     status();
+    break;
+  case 'reset':
+    if (command === 'reset') {
+      if (args.length === 0) {
+         removeFromIndex(); // unstage all
+         console.log('All files unstaged.');
+      } else {
+        for (const target of args) {
+          removeFromIndex(target);
+          console.log(`Unstaged: ${target}`);
+        }
+      }
+    }
     break;
   case 'commit':
     if(args[0] === '-m' && args[1]){
