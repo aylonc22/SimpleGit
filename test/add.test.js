@@ -119,4 +119,24 @@ describe('add command', () => {
   
     logSpy.mockRestore();
   });
+
+  test('shows message when there is duplicate add', async () => {
+    const filePath = path.join(TEST_REPO, 'file1.txt');
+    await fs.writeFile(filePath, 'Hello unchanged world');
+  
+    // First add
+    await add('file1.txt', TEST_REPO);
+   
+    // Capture console output
+    const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
+  
+    // Try to add again (no change)
+    await add('file1.txt', TEST_REPO);
+  
+    expect(logSpy).toHaveBeenCalledWith(
+      'Nothing to add. All files are already staged or unchanged.'
+    );
+  
+    logSpy.mockRestore();
+  });
 });
